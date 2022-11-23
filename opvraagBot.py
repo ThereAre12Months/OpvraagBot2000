@@ -123,7 +123,7 @@ while run:
             print("Je hebt alle woordjes minstens 1 keer juist gehad!")
         elif nextAction == "Begin met oefenen.":
             length = int(input("Hoeveel woordjes? "))
-            vrgWrdsrt = (if input("Woordsoorten opvragen? (y/n) ").lower() == "y")
+            vrgWrdsrt = (input("Woordsoorten opvragen? (y/n) ").lower() == "y")
             juistCount = vraagOp(voc, nmvl, length, vrgWrdsrt)
             print(f"Je had {juistCount} woordje(s) juist, dat is {round(juistCount/length*100)}%!")
         else:
