@@ -1,0 +1,8 @@
+{
+  "title" : "Adspectus 1",
+  "naamvallen" : ["NOM", "ACC", "GEN", "DAT", "ABL", "VOC"],
+  "voc" : {
+    "a/ab" : {"type":"voorzetsel", "add":"ABL", "translate":["van bij", "van", "door"]},
+    "ac/atque" : {"type":"voegwoord", "add":null, "translate":["en", "en zelfs"]}
+  }
+}
