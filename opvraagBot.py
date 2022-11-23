@@ -1,7 +1,7 @@
 import json, os, random
 
 # constants
-WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord"]
+WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord"]
 
 # opens the file with voc
 def jsonLoader(file):
@@ -14,6 +14,37 @@ def jsonLoader(file):
 # lists the available options
 def listOptions(folder):
     return os.listdir(folder)
+
+# dit vraagt de vertaling op
+def vertalingOpvragen(origWoordje, vertalingen):
+    allesJuist = True
+    if len(vertalingen) > 1:
+        sols = []
+        wrong = False
+        while not wrong:
+            for idx, translation in enumerate(vertalingen):
+                if translation in sols:
+                    print(f" [{idx}]: {translation}")
+                else:
+                    print(f" [{idx}]: ...")
+            nextSol = input("De volgende vertaling? ")
+            if nextSol in vertalingen:
+                if nextSol in sols:
+                    print("Die oplossing heb je al gezegd.")
+                else:
+                    sols.append(nextSol)
+                    print("Dat is juist!")
+            else:
+                allesJuist = False
+
+            if len(sols) == len(vertalingen):
+                break
+    else:
+        if input("Wat is de vertaling? ") == vertalingen[0]:
+            pass
+        else:
+            allesJuist = False
+    return allesJuist
 
 # gives a neat overview of all the vocabulary
 def overview(vc):
@@ -33,39 +64,36 @@ def vraagOp(vc, naamvl, times):
         print(woordje)
         if stage("Welke woordsoort?", WOORDSOORTEN) == vc[woordje]["type"]:
             print("Correct!")
-            if vc[woordje]["add"] != None:
-                 if stage("Plus...", naamvl) == vc[woordje]["add"]:
-                     print("Correct!")
-                 else:
-                    print("Fout! :-(")
-                    continue
-            # nu gaan we de vertalingen zelf opvragen
-            if len(vc[woordje]["translate"]) > 1:
-                sols = []
-                wrong = False
-                while not wrong:
-                    for idx, translation in enumerate(vc[woordje]["translate"]):
-                        if translation in sols:
-                            print(f" [{idx}]: {translation}")
-                        else:
-                            print(f" [{idx}]: ...")
-                    nextSol = input("De volgende vertaling? ")
-                    if nextSol in vc[woordje]["translate"]:
-                        if nextSol in sols:
-                            print("Die oplossing heb je al gezegd.")
-                        else:
-                            sols.append(nextSol)
-                            print("Dat is juist!")
-                    else:
-                        print("Fout! :-(")
-
-                    if len(sols) == len(vc[woordje]["translate"]):
-                        correctCounter += 1
-                        break
         else:
             print("Fout! :-(")
+            continue
+        if vc[woordje]["add"] != None:
+            if stage("Plus...", naamvl) == vc[woordje]["add"]:
+                 print("Correct!")
+            else:
+                print("Fout! :-(")
+                continue
+        # nu gaan we de vertalingen zelf opvragen
+        if vraagOp(vc[woordje], vc[woordje]["translate"]):
+            correctCounter += 1
+            print("Alles juist!!!")
+        else:
+            print("Je maakte een fout. :-(")
 
     return correctCounter
+
+def toetsModus(vc, naamvl):
+    juisteWoordjes = []
+    while len(juisteWoordjes) < len(list(vc.keys())):
+        fouteWoordjes = list(set(juisteWoordjes).symmetric_difference(list(vc.keys())))
+        foutWoordje = random.choice(fouteWoordjes)
+        print(foutWoordje)
+        if vertalingOpvragen(foutWoordje, vc[foutWoordje]["translate"]):
+            juisteWoordjes.append(foutWoordje)
+            print("Dat was helemaal juist!")
+        else:
+            print("Jammer, dat was fout. :-(")
+
 
 # reusing the stage function
 def stage(question, options):
@@ -86,9 +114,12 @@ while run:
 
     opvraagLoop = True
     while opvraagLoop:
-        nextAction = stage("Volgende actie?", ["Geef een overzicht van de voc.", "Begin met oefenen.", "Ga terug."])
+        nextAction = stage("Volgende actie?", ["Geef een overzicht van de voc.", "Begin met oefenen.", "Toets modus.", "Ga terug."])
         if nextAction == "Geef een overzicht van de voc.":
             overview(voc)
+        elif nextAction == "Toets modus.":
+            toetsModus(voc, nmvl)
+            print("Je hebt alle woordjes minstens 1 keer juist gehad!")
         elif nextAction == "Begin met oefenen.":
             length = int(input("Hoeveel woordjes? "))
             juistCount = vraagOp(voc, nmvl, length)
