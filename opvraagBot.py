@@ -57,16 +57,17 @@ def overview(vc):
         print(out)
 
 # met deze functie kan je de voc opvragen
-def vraagOp(vc, naamvl, times):
+def vraagOp(vc, naamvl, times, vraagWoordsoorten):
     correctCounter = 0
     for i in range(times):
         woordje = random.choice(list(vc.keys()))
         print(woordje)
-        if stage("Welke woordsoort?", WOORDSOORTEN) == vc[woordje]["type"]:
-            print("Correct!")
-        else:
-            print("Fout! :-(")
-            continue
+        if vraagWoordsoorten:
+            if stage("Welke woordsoort?", WOORDSOORTEN) == vc[woordje]["type"]:
+                print("Correct!")
+            else:
+                print("Fout! :-(")
+                continue
         if vc[woordje]["add"] != None:
             if stage("Plus...", naamvl) == vc[woordje]["add"]:
                  print("Correct!")
@@ -74,7 +75,7 @@ def vraagOp(vc, naamvl, times):
                 print("Fout! :-(")
                 continue
         # nu gaan we de vertalingen zelf opvragen
-        if vraagOp(vc[woordje], vc[woordje]["translate"]):
+        if vertalingOpvragen(vc[woordje], vc[woordje]["translate"]):
             correctCounter += 1
             print("Alles juist!!!")
         else:
@@ -122,7 +123,8 @@ while run:
             print("Je hebt alle woordjes minstens 1 keer juist gehad!")
         elif nextAction == "Begin met oefenen.":
             length = int(input("Hoeveel woordjes? "))
-            juistCount = vraagOp(voc, nmvl, length)
+            vrgWrdsrt = (if input("Woordsoorten opvragen? (y/n) ").lower() == "y")
+            juistCount = vraagOp(voc, nmvl, length, vrgWrdsrt)
             print(f"Je had {juistCount} woordje(s) juist, dat is {round(juistCount/length*100)}%!")
         else:
             opvraagLoop = False

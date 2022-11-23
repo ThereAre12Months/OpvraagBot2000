@@ -30,6 +30,12 @@
     "inter":{"type":"werkwoord","add":"ACC","translate":["tussen"]},
     "is":{"type":"aanwijzend voornaamwoord","add":null,"translate":["die","dat"]},
     "laetus":{"type":"adjectief","add":null,"translate":["vrolijk","blij"]},
-    "longe":{"type":"bijwoord","add":null,"translate":["ver","verreweg"]}
+    "longe":{"type":"bijwoord","add":null,"translate":["ver","verreweg"]},
+    "manere":{"type":"werkwoord","add":null,"translate":["blijven", "te wachten staan"]},
+    "murus":{"type":"substantief","add":null,"translate":["muur"]},
+    "nam":{"type":"voegwoord","add":null,"translate":["want"]},
+    "nihil":{"type":"bijwoord","add":null,"translate":["niets"]},
+    "non":{"type":"bijwoord","add":null,"translate":["niet"]},
+    "nuntius":{"type":"substantief","add":null,"translate":["bode", "bericht"]}
   }
 }
