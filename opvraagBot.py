@@ -1,7 +1,7 @@
 import json, os, random
 
 # constants
-WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel"]
+WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord"]
 
 # opens the file with voc
 def jsonLoader(file):
