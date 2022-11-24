@@ -24,10 +24,20 @@ def vertalingOpvragen(origWoordje, vertalingen):
         while not wrong:
             for idx, translation in enumerate(vertalingen):
                 if translation in sols:
-                    print(f" [{idx}]: {translation}")
+                    if type(translation) == str:
+                        print(f" [{idx}]: {translation}")
+                    else:
+                        print(f" [{idx}] ({translation[0]}): {translation}")
                 else:
-                    print(f" [{idx}]: ...")
-            nextSol = input("De volgende vertaling? ")
+                    if type(translation) == str:
+                        print(f" [{idx}]: ...")
+                    else:
+                        print(f" [{idx}] ({translation[0]}): ...")
+            nextSol = input("De volgende vertaling? ('geef op' om op te geven) ")
+            if nextSol == "geef op":
+                wrong = True
+                allesJuist = False
+                continue
             if nextSol in vertalingen:
                 if nextSol in sols:
                     print("Die oplossing heb je al gezegd.")
@@ -53,7 +63,14 @@ def overview(vc):
         out = str(key)
         out += f": {word['type']}"
         if word["add"] != None: out += f": +{word['add']}"
-        out += f": {', '.join(word['translate'])}"
+        new = ""
+        for translates in word["translate"]:
+            if not len(new) == 0: new += ", "
+            if type(translates) == str:
+                new += translates
+            else:
+                new += f"({translates[0]}) {translates[1]}"
+        out += f": {new}"
         print(out)
 
 # met deze functie kan je de voc opvragen
