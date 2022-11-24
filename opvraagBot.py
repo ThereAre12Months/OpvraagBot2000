@@ -1,7 +1,7 @@
 import json, os, random
 
 # constants
-WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord"]
+WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord", "bezittelijk voornaamwoord"]
 
 # opens the file with voc
 def jsonLoader(file):
@@ -93,7 +93,7 @@ def toetsModus(vc, naamvl):
             juisteWoordjes.append(foutWoordje)
             print("Dat was helemaal juist!")
         else:
-            print("Jammer, dat was fout. :-(")
+            print(f"Je maakte een fout {foutWoordje} door te typen. :-(")
 
 
 # reusing the stage function
@@ -106,8 +106,8 @@ def stage(question, options):
 # main loop
 run = True
 while run:
-    language = stage("Welke taal wil je leren?", [*listOptions("Talen"), "exit"])
-    if language == "exit": run = False; continue
+    language = stage("Welke taal wil je leren?", [*listOptions("Talen"), "Sluit woordentrainer af"])
+    if language == "Sluit woordentrainer af": run = False; continue
 
     chapter = stage("Welk hoofdstuk wil je leren?", listOptions(f"Talen/{language}"))
 
