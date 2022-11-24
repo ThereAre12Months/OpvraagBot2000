@@ -1,7 +1,7 @@
 import json, os, random
 
 # constants
-WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord"]
+WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord"]
 
 # opens the file with voc
 def jsonLoader(file):
@@ -115,10 +115,10 @@ while run:
 
     opvraagLoop = True
     while opvraagLoop:
-        nextAction = stage("Volgende actie?", ["Geef een overzicht van de voc.", "Begin met oefenen.", "Toets modus.", "Ga terug."])
+        nextAction = stage("Volgende actie?", ["Geef een overzicht van de voc.", "Begin met oefenen.", "Toetsmodus.", "Ga terug."])
         if nextAction == "Geef een overzicht van de voc.":
             overview(voc)
-        elif nextAction == "Toets modus.":
+        elif nextAction == "Toetsmodus.":
             toetsModus(voc, nmvl)
             print("Je hebt alle woordjes minstens 1 keer juist gehad!")
         elif nextAction == "Begin met oefenen.":
