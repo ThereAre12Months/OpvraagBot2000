@@ -83,7 +83,7 @@
     "noster":{"type":"bezittelijk voornaamwoord","add":null,"translate": ["onze"]},
     "pax":{"type":"substantief","add":null,"translate": ["de vrede"]},
     "pater":{"type":"substantief","add":null,"translate": ["de vader"]},
-    "patres":{"type":"substantief","add":null,"translate": ["mv", "de voorouders", "de senatoren"]},
+    "patres":{"type":"substantief","add":null,"translate": ["de voorouders", "de senatoren"]},
     "petere":{"type":"werkwoord","add":null,"translate": [["a/ab + abl.", "vragen aan"], "opzoeken", "gaan naar"]},
     "post":{"type":"voorzetsel","add":"ACC","translate": ["na", "achter"]},
     "quoque":{"type":"voegwoord","add":null,"translate": ["ook"]},
@@ -101,6 +101,12 @@
     "amica":{"type":"substantief","add":null,"translate": ["de vriendin"]},
     "ars":{"type":"substantief","add":null,"translate": ["de vaardigheid", "de kunst"]},
     "at":{"type":"voegwoord","add":null,"translate": ["maar", "daarentegen"]},
-    "autem":{"type":"voegwoord","add":null,"translate": ["maar", "echter"]}
+    "autem":{"type":"voegwoord","add":null,"translate": ["maar", "echter"]},
+    "deésse":{"type":"werkwoord","add":null,"translate": ["ontbreken"]},
+    "deus":{"type":"substantief","add":null,"translate": ["de god"]},
+    "dea":{"type":"substantief","add":null,"translate": ["de godin"]},
+    "domus":{"type":"substantief","add":null,"translate": ["het huis"]},
+    "facere":{"type":"werkwoord","add":null,"translate": ["doen", "maken"]},
+    "ferre":{"type":"werkwoord","add":null,"translate": ["dragen", "brengen"]}
   }
 }
