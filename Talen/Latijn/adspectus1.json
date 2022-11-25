@@ -96,6 +96,11 @@
     "vester":{"type":"bezittelijk voornaamwoord","add":null,"translate": ["jullie"]},
     "vir":{"type":"substantief","add":null,"translate": ["de man"]},
     "vos":{"type":"persoonlijk voornaamwoord","add":null,"translate": ["jullie"]},
-    "-que":{"type":"voegwoord","add":"Staat aan een substantief vast","translate": ["en"]}
+    "-que":{"type":"voegwoord","add":"Staat aan een substantief vast","translate": ["en"]},
+    "amicus":{"type":"substantief","add":null,"translate": ["de vriend"]},
+    "amica":{"type":"substantief","add":null,"translate": ["de vriendin"]},
+    "ars":{"type":"substantief","add":null,"translate": ["de vaardigheid", "de kunst"]},
+    "at":{"type":"voegwoord","add":null,"translate": ["maar", "daarentegen"]},
+    "autem":{"type":"voegwoord","add":null,"translate": ["maar", "echter"]}
   }
 }
