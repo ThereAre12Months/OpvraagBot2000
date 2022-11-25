@@ -110,8 +110,8 @@ def toetsModus(vc, naamvl):
             juisteWoordjes.append(foutWoordje)
             print("Dat was helemaal juist!")
         else:
-            print(f"Je maakte een fout {foutWoordje} door te typen. :-(")
-
+            print(f"Je maakte een fout door {foutWoordje} te typen. :-(")
+        #los deze shit op Ruben
 
 # reusing the stage function
 def stage(question, options):
