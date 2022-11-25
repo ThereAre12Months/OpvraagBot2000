@@ -107,6 +107,7 @@
     "dea":{"type":"substantief","add":null,"translate": ["de godin"]},
     "domus":{"type":"substantief","add":null,"translate": ["het huis"]},
     "facere":{"type":"werkwoord","add":null,"translate": ["doen", "maken"]},
-    "ferre":{"type":"werkwoord","add":null,"translate": ["dragen", "brengen"]}
+    "ferre":{"type":"werkwoord","add":null,"translate": ["dragen", "brengen"]},
+    "gratia":{"type":"substantief","add":null,"translate": ["de charme", "de dank"]}
   }
 }

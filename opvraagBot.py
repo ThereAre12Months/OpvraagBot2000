@@ -33,8 +33,8 @@ def vertalingOpvragen(origWoordje, vertalingen):
                         print(f" [{idx}]: ...")
                     else:
                         print(f" [{idx}] ({translation[0]}): ...")
-            nextSol = input("De volgende vertaling? ('geef op' om op te geven) ")
-            if nextSol == "geef op":
+            nextSol = input("De volgende vertaling? (Typ '?' als je het antwoord niet weet.) ")
+            if nextSol == "?":
                 wrong = True
                 allesJuist = False
                 continue
