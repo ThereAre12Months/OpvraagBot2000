@@ -108,6 +108,17 @@
     "domus":{"type":"substantief","add":null,"translate": ["het huis"]},
     "facere":{"type":"werkwoord","add":null,"translate": ["doen", "maken"]},
     "ferre":{"type":"werkwoord","add":null,"translate": ["dragen", "brengen"]},
-    "gratia":{"type":"substantief","add":null,"translate": ["de charme", "de dank"]}
+    "gratia":{"type":"substantief","add":null,"translate": ["de charme", "de dank"]},
+    "haud":{"type":"bijwoord","add":null,"translate": ["helemaal niet"]},
+    "hic":{"type":"aanwijzend voornaamwoord","add":null,"translate": ["deze/dit (hier)"]},
+    "ignis":{"type":"substantief","add":null,"translate": ["het vuur"]},
+    "ille":{"type":"aanwijzend voornaamwoord","add":null,"translate": ["die/dat (daar)"]},
+    "magis":{"type":"bijwoord","add":null,"translate": ["meer"]},
+    "maximus":{"type":"adjectief","add":null,"translate": ["zeer groot", "grootste"]},
+    "miser":{"type":"adjectief","add":null,"translate": ["ongelukkig", "ellendig"]},
+    "nec/necque":{"type":"voegwoord","add":null,"translate": ["niet ...", "en ook niet ..."]},
+    "nec ... nec .../neque ... neque ...":{"type":"voegwoord","add":null,"translate": ["niet ...", "en ook niet ..."]},
+    "nisi":{"type":"bijwoord","add":null,"translate": ["als niet", "tenzij"]},
+    "nolle":{"type":"werkwoord","add":null,"translate": ["niet willen"]}
   }
 }
