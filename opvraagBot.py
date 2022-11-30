@@ -136,6 +136,8 @@ while run:
         if nextAction == "Geef een overzicht van de voc.":
             overview(voc)
         elif nextAction == "Voorbereiden op toets.":
+            print("Zorg ervoor dat je genoeg tijd hebt,\n"
+                  "Deze modus blijft vragen tot je alles juist hebt gehad.")
             toetsModus(voc, nmvl)
             print("Je hebt alle woordjes minstens 1 keer juist gehad!")
         elif nextAction == "Begin met oefenen.":
