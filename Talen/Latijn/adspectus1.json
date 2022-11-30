@@ -78,7 +78,7 @@
     "malle":{"type":"werkwoord","add":null,"translate": ["liever willen"]},
     "manus":{"type":"substantief","add":null,"translate": ["de hand", "de troep"]},
     "miles":{"type":"substantief","add":null,"translate": ["de soldaat"]},
-    "mittere":{"type":"werkoord","add":null,"translate": ["sturen", "zenden"]},
+    "mittere":{"type":"werkwoord","add":null,"translate": ["sturen", "zenden"]},
     "nos":{"type":"persoonlijk voornaamwoord","add":null,"translate": ["wij", "ons"]},
     "noster":{"type":"bezittelijk voornaamwoord","add":null,"translate": ["onze"]},
     "pax":{"type":"substantief","add":null,"translate": ["de vrede"]},
