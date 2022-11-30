@@ -33,10 +33,13 @@ def vertalingOpvragen(origWoordje, vertalingen):
                         print(f" [{idx}]: ...")
                     else:
                         print(f" [{idx}] ({translation[0]}): ...")
-            nextSol = input("De volgende vertaling? (Typ '?' als je het antwoord niet weet.) ")
+            nextSol = input("De volgende vertaling? (Typ '?' of 'stop' als je het antwoord niet weet of wilt stoppen.) : ")
             if nextSol == "?":
                 wrong = True
                 allesJuist = False
+                continue
+            elif nextSol == 'stop':
+                allesJuist = "stopping this sh*t"
                 continue
             if nextSol in vertalingen:
                 if nextSol in sols:
@@ -50,8 +53,12 @@ def vertalingOpvragen(origWoordje, vertalingen):
             if len(sols) == len(vertalingen):
                 break
     else:
-        if input("Wat is de vertaling? ") == vertalingen[0]:
+        sluit_dit_ding_af = input("Wat is de vertaling? (Typ 'stop' om af te sluiten.) : ")
+        if sluit_dit_ding_af == vertalingen[0]:
             pass
+        elif sluit_dit_ding_af == "stop":
+            allesJuist = "stoppping this sh*t"
+
         else:
             allesJuist = False
     return allesJuist
@@ -59,11 +66,13 @@ def vertalingOpvragen(origWoordje, vertalingen):
 # gives a neat overview of all the vocabulary
 def overview(vc):
     for key in vc.keys():
+        out = "\033[1;3m" + "\033[94m"
         word = vc[key]
-        out = str(key)
+        out += str(key)
+        out += "\033[0m" + "\033[93m"
         out += f": {word['type']}"
-        if word["add"] != None: out += f": +{word['add']}"
-        new = ""
+        if word["add"] != None: out += "\033[92m" f": +{word['add']}"
+        new = "\033[95m"
         for translates in word["translate"]:
             if not len(new) == 0: new += ", "
             if type(translates) == str:
@@ -71,14 +80,14 @@ def overview(vc):
             else:
                 new += f"({translates[0]}) {translates[1]}"
         out += f": {new}"
-        print(out)
+        print(out + "\033[0m")
 
 # met deze functie kan je de voc opvragen
 def vraagOp(vc, naamvl, times, vraagWoordsoorten):
     correctCounter = 0
     for i in range(times):
         woordje = random.choice(list(vc.keys()))
-        print(woordje)
+        print("\033[1;3m" + "\033[94m" + woordje + "\033[0m")
         if vraagWoordsoorten:
             if stage("Welke woordsoort?", WOORDSOORTEN) == vc[woordje]["type"]:
                 print("Correct!")
@@ -105,13 +114,17 @@ def toetsModus(vc, naamvl):
     while len(juisteWoordjes) < len(list(vc.keys())):
         fouteWoordjes = list(set(juisteWoordjes).symmetric_difference(list(vc.keys())))
         foutWoordje = random.choice(fouteWoordjes)
-        print(foutWoordje)
-        if vertalingOpvragen(foutWoordje, vc[foutWoordje]["translate"]):
+        print("\033[1;3m" + "\033[94m" + foutWoordje + "\033[0m")
+        trashcan = vertalingOpvragen(foutWoordje, vc[foutWoordje]["translate"])
+        if trashcan == True:
             juisteWoordjes.append(foutWoordje)
             print("Dat was helemaal juist!")
-        else:
-            print(f"Je maakte een fout door {foutWoordje} te typen. :-(")
+        elif trashcan == "stoppping this sh*t":
+            print("Oefenen voor toets sluit af.")
+            break
+
         #los deze shit op Ruben
+    return fouteWoordjes
 
 # reusing the stage function
 def stage(question, options):
@@ -138,11 +151,13 @@ while run:
         elif nextAction == "Voorbereiden op toets.":
             print("Zorg ervoor dat je genoeg tijd hebt,\n"
                   "deze modus blijft vragen tot je alles juist hebt gehad.")
-            toetsModus(voc, nmvl)
-            print("Je hebt alle woordjes minstens 1 keer juist gehad!")
+            uitkomst = toetsModus(voc, nmvl)
+            if uitkomst == []:
+                print("Je hebt alle woordjes minstens 1 keer juist gehad!")
+
         elif nextAction == "Begin met oefenen.":
-            length = int(input("Hoeveel woordjes? "))
-            vrgWrdsrt = (input("Woordsoorten opvragen? (y/n) ").lower() == "y")
+            length = int(input("Hoeveel woordjes? : "))
+            vrgWrdsrt = (input("Woordsoorten opvragen? (y/n) : ").lower() == "y")
             juistCount = vraagOp(voc, nmvl, length, vrgWrdsrt)
             print(f"Je had {juistCount} woordje(s) juist, dat is {round(juistCount/length*100)}%!")
         else:
