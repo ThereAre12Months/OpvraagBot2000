@@ -52,7 +52,8 @@ def vertalingOpvragen(origWoordje, vertalingen):
                 wrong = True
                 allesJuist = False
                 continue
-            elif nextSol == 'stop':
+            elif nextSol == "stop":
+                wrong = True
                 allesJuist = "stopping this sh*t"
                 continue
             if nextSol in vertalingen:
@@ -67,14 +68,19 @@ def vertalingOpvragen(origWoordje, vertalingen):
             if len(sols) == len(vertalingen):
                 break
     else:
-        sluit_dit_ding_af = input("Wat is de vertaling? (Typ 'stop' om af te sluiten.) : ")
-        if sluit_dit_ding_af == vertalingen[0]:
-            pass
-        elif sluit_dit_ding_af == "stop":
-            allesJuist = "stoppping this sh*t"
-
-        else:
-            allesJuist = False
+        heeft_het_juist_gehad = False
+        while not heeft_het_juist_gehad:
+            sluit_dit_ding_af = input("Wat is de vertaling? (Typ '?' 'stop' als je het antwoord niet weet of wilt stoppen.) : ")
+            if sluit_dit_ding_af == vertalingen[0]:
+                heeft_het_juist_gehad = True
+            elif sluit_dit_ding_af == "stop":
+                allesJuist = "stopping this sh*t"
+                break
+            elif sluit_dit_ding_af == "?":
+                allesJuist = False
+                break
+            else:
+                allesJuist = False
     return allesJuist
 
 # gives a neat overview of all the vocabulary
@@ -133,7 +139,7 @@ def toetsModus(vc, naamvl):
         if trashcan == True:
             juisteWoordjes.append(foutWoordje)
             print("Dat was helemaal juist!")
-        elif trashcan == "stoppping this sh*t":
+        elif trashcan == "stopping this sh*t":
             print("Oefenen voor toets sluit af.")
             break
 
