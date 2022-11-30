@@ -5,7 +5,3 @@
     "iste" : {"type" : "adjectief", "add" : null, "translate":["die", "dat"]}
   }
 }
-
-### ignore this
-{"type" : "", "add" : null, "translate":[]}, # dit is het template waar alle woordjes op gebouwd zijn
-### opvraagBot.py werkt niet met deze tekst erbij (kopiëer dit en verwijder het dan uit het bestand)
