@@ -132,10 +132,10 @@ while run:
 
     opvraagLoop = True
     while opvraagLoop:
-        nextAction = stage("Volgende actie?", ["Geef een overzicht van de voc.", "Begin met oefenen.", "Toetsmodus.", "Ga terug."])
+        nextAction = stage("Volgende actie?", ["Geef een overzicht van de voc.", "Begin met oefenen.", "Voorbereiden op toets.", "Ga terug."])
         if nextAction == "Geef een overzicht van de voc.":
             overview(voc)
-        elif nextAction == "Toetsmodus.":
+        elif nextAction == "Voorbereiden op toets.":
             toetsModus(voc, nmvl)
             print("Je hebt alle woordjes minstens 1 keer juist gehad!")
         elif nextAction == "Begin met oefenen.":
