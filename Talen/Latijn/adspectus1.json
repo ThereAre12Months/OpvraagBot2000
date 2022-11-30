@@ -49,7 +49,7 @@
     "puella":{"type":"substantief","add":null,"translate": ["het meisje"]},
     "res":{"type":"substantief","add":null,"translate": ["de zaak", "het ding"]},
     "sed":{"type":"voegwoord","add":null,"translate": ["maar"]},
-    "solus":{"type":"adjectief","add":null,"translate": ["allen", "enig"]},
+    "solus":{"type":"adjectief","add":null,"translate": ["alleen", "enig"]},
     "tradere":{"type":"werkwoord","add":null,"translate": ["overleveren", "overhandigen"]},
     "tu":{"type":"persoonlijk voornaamwoord","add":null,"translate": ["jij", "u"]},
     "verbum":{"type":"substantief","add":null,"translate": ["het woord"]},
