@@ -1,4 +1,5 @@
-import json, os, random
+import json, os, random, sys, colorama
+colorama.init()
 
 # constants
 WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord", "bezittelijk voornaamwoord", "vraagpartikel", "vraagwoord", "wederkerend voornaamwoord"]
@@ -9,11 +10,24 @@ def jsonLoader(file):
         jsonFile = json.loads(f.read()) # turns the file into a dictionary
     naamvallen = jsonFile["naamvallen"]
     vocabulary = jsonFile["voc"]
-    return vocabulary, naamvallen
+    naam       = jsonFile["title"]
+    return vocabulary, naamvallen, naam
 
 # lists the available options
 def listOptions(folder):
-    return os.listdir(folder)
+    if ".json" in list(os.listdir(folder))[0]:
+        if True: # True = new system, False = old system
+            options = os.listdir(folder)
+            file_list = []
+            for opt in options:
+                _,_,title_ = jsonLoader(folder + "/" + opt)
+                file_list.append(title_)
+
+            return file_list, os.listdir(folder)
+        else:
+            return os.listdir(folder), None
+    else:
+        return os.listdir(folder), None
 
 # dit vraagt de vertaling op
 def vertalingOpvragen(origWoordje, vertalingen):
@@ -79,15 +93,15 @@ def overview(vc):
                 new += translates
             else:
                 new += f"({translates[0]}) {translates[1]}"
-        out += f": {new}"
-        print(out + "\033[0m")
+        out += f": {new}\n"
+        sys.stdout.write(out + "\033[0m")
 
 # met deze functie kan je de voc opvragen
 def vraagOp(vc, naamvl, times, vraagWoordsoorten):
     correctCounter = 0
     for i in range(times):
         woordje = random.choice(list(vc.keys()))
-        print("\033[1;3m" + "\033[94m" + woordje + "\033[0m")
+        sys.stdout.write("\033[1;3m" + "\033[94m" + woordje + "\033[0m\n")
         if vraagWoordsoorten:
             if stage("Welke woordsoort?", WOORDSOORTEN) == vc[woordje]["type"]:
                 print("Correct!")
@@ -114,7 +128,7 @@ def toetsModus(vc, naamvl):
     while len(juisteWoordjes) < len(list(vc.keys())):
         fouteWoordjes = list(set(juisteWoordjes).symmetric_difference(list(vc.keys())))
         foutWoordje = random.choice(fouteWoordjes)
-        print("\033[1;3m" + "\033[94m" + foutWoordje + "\033[0m")
+        sys.stdout.write("\033[1;3m" + "\033[94m" + foutWoordje + "\033[0m\n")
         trashcan = vertalingOpvragen(foutWoordje, vc[foutWoordje]["translate"])
         if trashcan == True:
             juisteWoordjes.append(foutWoordje)
@@ -127,21 +141,28 @@ def toetsModus(vc, naamvl):
     return fouteWoordjes
 
 # reusing the stage function
-def stage(question, options):
+def stage(question, options, ids=None):
     print(question)
     for idx, option in enumerate(options):
         print(f" [{idx}] {option}")
-    return options[int(input("> "))] # returns the actual item instead of a number
+    if ids == None:
+        return options[int(input("> "))] # returns the actual item instead of a number
+    else:
+        return ids[int(input("> "))] # returns the .json variant instead of the actual name eg. Adspectus 1 -> adspectus1.json
 
 # main loop
 run = True
 while run:
-    language = stage("Welke taal wil je leren?", [*listOptions("Talen"), "Sluit woordentrainer af"])
+    language = stage("Welke taal wil je leren?", [*(listOptions("Talen")[0]), "Sluit woordentrainer af"])
     if language == "Sluit woordentrainer af": run = False; continue
 
-    chapter = stage("Welk hoofdstuk wil je leren?", listOptions(f"Talen/{language}"))
+    chapter_opts = listOptions(f"Talen/{language}")
+    if chapter_opts[1] == None:
+        chapter = stage("Welk hoofdstuk wil je leren?", chapter_opts[0])
+    else:
+        chapter = stage("Welk hoofdstuk wil je leren?", chapter_opts[0], chapter_opts[1])
 
-    voc, nmvl = jsonLoader(f"Talen/{language}/{chapter}") # nmvl stands for naamvallen
+    voc, nmvl, _ = jsonLoader(f"Talen/{language}/{chapter}") # nmvl stands for naamvallen
 
     opvraagLoop = True
     while opvraagLoop:
