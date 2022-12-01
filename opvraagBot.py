@@ -93,8 +93,8 @@ def overview(vc):
         out += f": {word['type']}"
         if word["add"] != None: out += "\033[92m" f": +{word['add']}"
         new = "\033[95m"
-        for translates in word["translate"]:
-            if not len(new) == 0: new += ", "
+        for count, translates in enumerate(word["translate"]):
+            if not count == 0: new += ", "
             if type(translates) == str:
                 new += translates
             else:
