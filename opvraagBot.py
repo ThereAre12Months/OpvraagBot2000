@@ -1,5 +1,5 @@
-import json, os, random, sys, colorama
-colorama.init()
+import json, os, random, sys, colorsys
+#colorama.init()
 
 # constants
 WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord", "bezittelijk voornaamwoord", "vraagpartikel", "vraagwoord", "wederkerend voornaamwoord"]
@@ -70,7 +70,7 @@ def vertalingOpvragen(origWoordje, vertalingen):
     else:
         heeft_het_juist_gehad = False
         while not heeft_het_juist_gehad:
-            sluit_dit_ding_af = input("Wat is de vertaling? (Typ '?' 'stop' als je het antwoord niet weet of wilt stoppen.) : ")
+            sluit_dit_ding_af = input("Wat is de vertaling? (Typ '?' of 'stop' als je het antwoord niet weet of wilt stoppen.) : ")
             if sluit_dit_ding_af == vertalingen[0]:
                 heeft_het_juist_gehad = True
             elif sluit_dit_ding_af == "stop":
