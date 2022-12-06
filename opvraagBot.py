@@ -1,5 +1,5 @@
-import json, os, random, sys, colorsys
-#colorama.init()
+import json, os, random, sys, colorama
+colorama.init()
 
 # constants
 WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord", "bezittelijk voornaamwoord", "vraagpartikel", "vraagwoord", "wederkerend voornaamwoord"]
