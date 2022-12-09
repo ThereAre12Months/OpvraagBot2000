@@ -15,6 +15,15 @@
     "hic" : {"type" : "bijwoord", "add" : null, "translate" : ["hier"]},
     "exspectare" : {"type" : "werkwoord", "add" : null, "translate" : ["wachten", "verwachten"]},
     "sedere" : {"type" : "werkwoord", "add" : null, "translate" : ["zitten"]},
-    "imago" : {"type" : "substantief", "add" : null, "translate" : ["het beeld", "de afbeelding"]}
+    "imago" : {"type" : "substantief", "add" : null, "translate" : ["het beeld", "de afbeelding"]},
+    "vultus" : {"type" : "substantief", "add" : null, "translate" : ["de gelaatsuitdrukking", "het gezicht"]},
+    "caedes" : {"type" : "substantief", "add" : null, "translate" : ["de hemel"]},
+    "hortari" : {"type" : "werkwoord", "add" : null, "translate" : ["aanmoedigen", "aansporen"]},
+    "polliceri" : {"type" : "werkwoord", "add" : null, "translate" : ["beloven"]},
+    "largiri" : {"type" : "werkwoord", "add" : null, "translate" : ["rijkelijk schenken"]},
+    "pati" : {"type" : "werkwoord", "add" : null, "translate" : ["lijden", "verdragen", "toestaan", "ondervinden"]},
+    "vetus" : {"type" : "adjectief", "add" : null, "translate" : ["oud"]},
+    "impetus" : {"type" : "substantief", "add" : null, "translate" : ["de aanval", "de stormloop", "de vaart", "de snelheid"]},
+    "lux" : {"type" : "substantief", "add" : null, "translate" : ["het licht", "het daglicht"]}
   }
 }
