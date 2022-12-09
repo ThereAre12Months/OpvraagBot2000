@@ -62,7 +62,7 @@
     "fortis":{"type":"adjectief","add":null,"translate": ["sterk", "dapper"]},
     "fructus":{"type":"substantief","add":null,"translate": ["de vrucht"]},
     "abire":{"type":"werkwoord","add":null,"translate": ["weggaan"]},
-    "arma":{"type":"substantief","add":null,"translate": ["mv", "de wapens"]},
+    "arma":{"type":"substantief","add":null,"translate": ["de wapens"]},
     "bellum":{"type":"substantief","add":null,"translate": ["de oorlog"]},
     "colere":{"type":"werkwoord","add":null,"translate": ["bewerken", "(be)wonen", "vereren"]},
     "deinde":{"type":"bijwoord","add":null,"translate": ["daarna", "vervolgens"]},
