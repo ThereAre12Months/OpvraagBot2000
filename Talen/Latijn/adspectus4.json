@@ -1,0 +1,29 @@
+{
+  "title" : "Adspectus 4",
+  "naamvallen" : ["NOM.", "ACC.", "GEN.", "DAT.", "ABL.", "VOC.", "Staat aan een substantief vast"],
+  "voc" : {
+    "quantus" : {"type" : "adjectief", "add" : null, "translate" : ["hoe groot", "als"]},
+    "timor" : {"type" : "substantief", "add" : null, "translate" : ["de vrees"]},
+    "sequi" : {"type" : "werkwoord", "add" : null, "translate" : ["volgen"]},
+    "uxor" : {"type" : "substantief", "add" : null, "translate" : ["de echtgenote"]},
+    "arx" : {"type" : "substantief", "add" : null, "translate" : ["de burcht"]},
+    "se recipere" : {"type" : "werkwoord", "add" : null, "translate" : ["zich terugtrekken"]},
+    "utilis" : {"type" : "adjectief", "add" : null, "translate" : ["nuttig"]},
+    "posterus" : {"type" : "adjectief", "add" : null, "translate" : ["nakomend", "volgend"]},
+    "apertus" : {"type" : "adjectief", "add" : null, "translate" : ["openlijk", "open"]},
+    "insidiae" : {"type" : "substantief", "add" : null, "translate" : ["de hinderlaag"]},
+    "hic" : {"type" : "bijwoord", "add" : null, "translate" : ["hier"]},
+    "exspectare" : {"type" : "werkwoord", "add" : null, "translate" : ["wachten", "verwachten"]},
+    "sedere" : {"type" : "werkwoord", "add" : null, "translate" : ["zitten"]},
+    "imago" : {"type" : "substantief", "add" : null, "translate" : ["het beeld", "de afbeelding"]},
+    "vultus" : {"type" : "substantief", "add" : null, "translate" : ["de gelaatsuitdrukking", "het gezicht"]},
+    "caedes" : {"type" : "substantief", "add" : null, "translate" : ["de hemel"]},
+    "hortari" : {"type" : "werkwoord", "add" : null, "translate" : ["aanmoedigen", "aansporen"]},
+    "polliceri" : {"type" : "werkwoord", "add" : null, "translate" : ["beloven"]},
+    "largiri" : {"type" : "werkwoord", "add" : null, "translate" : ["rijkelijk schenken"]},
+    "pati" : {"type" : "werkwoord", "add" : null, "translate" : ["lijden", "verdragen", "toestaan", "ondervinden"]},
+    "vetus" : {"type" : "adjectief", "add" : null, "translate" : ["oud"]},
+    "impetus" : {"type" : "substantief", "add" : null, "translate" : ["de aanval", "de stormloop", "de vaart", "de snelheid"]},
+    "lux" : {"type" : "substantief", "add" : null, "translate" : ["het licht", "het daglicht"]}
+  }
+}
