@@ -95,6 +95,6 @@
     "membrum" : {"type" : "substantief", "add" : null, "translate" : ["het lichaamsdeel"]},
     "sic" : {"type" : "bijwoord", "add" : null, "translate" : ["zo"]},
     "plus" : {"type" : "bijwoord", "add" : null, "translate" : ["meer"]},
-    "in-" : {"type" : "???", "add" : null, "translate" : ["on-"]},
+    "in-" : {"type" : "???", "add" : null, "translate" : ["on-"]}
   }
 }
