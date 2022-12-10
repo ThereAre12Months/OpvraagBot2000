@@ -2,7 +2,7 @@
   "title" : "Adspectus 1",
   "naamvallen" : ["NOM.", "ACC.", "GEN.", "DAT.", "ABL.", "VOC.", "Staat aan een substantief vast"],
   "fileName" : "adspectus1.json",
-  "location" : "Latijn"
+  "location" : "Latijn",
   "voc" : {
     "a/ab" : {"type":"voorzetsel", "add":"ABL.", "translate":["van bij", "weg van", "door"]},
     "ac/atque" : {"type":"voegwoord", "add":null, "translate":["en", "en zelfs"]},
