@@ -6,6 +6,9 @@ except:
     print("Kopiëer het het bestands-pad van je .update bestand.")
     path = input("> ")
 
+path = str(path)
+path = path.replace('"', "")
+
 try:
     with open(path, "r") as f:
         try:
