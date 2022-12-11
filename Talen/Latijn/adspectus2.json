@@ -28,7 +28,7 @@
     "aperire" : {"type" : "werkwoord", "add":null, "translate":["openen", "bekendmaken"]},
     "consilium" : {"type" : "substantief", "add":null, "translate":["de raad", "het plan", "de beslissing"]},
     "deducere" : {"type" : "werkwoord", "add":null, "translate":["wegbrengen", "wegbegeleiden"]},
-    "debere" : {"type" : "werkwoord", "add":null, "translate":["moeten", "verschuldigt zijn"]},
+    "debere" : {"type" : "werkwoord", "add":null, "translate":["moeten", "verschuldigd zijn"]},
     "liber" : {"type" : "adjectief", "add":null, "translate":["vrij"]},
     "periculum" : {"type" : "substantief", "add":null, "translate":["het gevaar"]},
     "populus" : {"type" : "substantief", "add":null, "translate":["het volk"]},
