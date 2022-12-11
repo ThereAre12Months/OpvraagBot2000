@@ -52,7 +52,7 @@
     "vel" : {"type" : "voegwoord", "add" : null, "translate":["of"]},
     "via" : {"type" : "substantief", "add" : null, "translate":["de weg"]},
     "clamor" : {"type" : "substantief", "add" : null, "translate":["het geroep"]},
-    "dolor" : {"type" : "substantief", "add" : null, "translate":["de pijn, het verdriet"]},
+    "dolor" : {"type" : "substantief", "add" : null, "translate":["de pijn", "het verdriet"]},
     "liberi" : {"type" : "substantief", "add" : null, "translate":["(iemands) kinderen"]},
     "meus" : {"type" : "adjectief", "add" : null, "translate":["mijn"]},
     "pectus" : {"type" : "substantief", "add" : null, "translate":["de borst"]},
