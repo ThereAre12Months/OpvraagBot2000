@@ -151,7 +151,7 @@
     "magnus":{"type":"adjectief","add":null,"translate": ["groot", "luid"]},
     "mare":{"type":"substantief","add":null,"translate": ["de zee"]},
     "modus":{"type":"substantief","add":null,"translate": ["de maat", "de manier", "de wijze"]},
-    "movere":{"type":"werkwoord","add":null,"translate": ["doen bewegen", "beïnvloeden", "raken"]},
+    "movere":{"type":"werkwoord","add":null,"translate": ["doen bewegen", "beinvloeden", "raken"]},
     "occidere":{"type":"werkwoord","add":null,"translate": ["doden"]},
     "posse":{"type":"werkwoord","add":null,"translate": ["kunnen"]},
     "reperire":{"type":"werkwoord","add":null,"translate": ["vinden", "terugvinden"]},

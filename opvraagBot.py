@@ -37,11 +37,13 @@ def vertalingOpvragen(origWoordje, vertalingen):
         wrong = False
         while not wrong:
             for idx, translation in enumerate(vertalingen):
-                if translation in sols:
+                actual_translate = translation
+                if type(actual_translate) == list: actual_translate = actual_translate[-1]
+                if actual_translate in sols:
                     if type(translation) == str:
                         print(f" [{idx}]: {translation}")
                     else:
-                        print(f" [{idx}] ({translation[0]}): {translation}")
+                        print(f" [{idx}] ({translation[0]}): {actual_translate}")
                 else:
                     if type(translation) == str:
                         print(f" [{idx}]: ...")
@@ -56,7 +58,11 @@ def vertalingOpvragen(origWoordje, vertalingen):
                 wrong = True
                 allesJuist = "stopping this sh*t"
                 continue
-            if nextSol in vertalingen:
+            special_vertalingen = []
+            for tr in vertalingen:
+                if type(tr) == list:
+                    special_vertalingen.append(tr[-1])
+            if nextSol in vertalingen or nextSol in special_vertalingen:
                 if nextSol in sols:
                     print("Die oplossing heb je al gezegd.")
                 else:
