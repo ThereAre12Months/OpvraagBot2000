@@ -22,7 +22,7 @@
     "plebs" : {"type" : "substantief", "add":null, "translate":["de plebejers", "de massa"]},
     "pugnare" : {"type" : "werkwoord", "add":null, "translate":["vechten"]},
     "rex" : {"type" : "substantief", "add":null, "translate":["de koning"]},
-    "si" : {"type" : "voegwoord", "add":null, "translate":["als, indien"]},
+    "si" : {"type" : "voegwoord", "add":null, "translate":["als", "indien"]},
     "abesse" : {"type" : "werkwoord", "add":null, "translate":["afwezig zijn", "verwijdert zijn"]},
     "agere" : {"type" : "werkwoord", "add":null, "translate":["drijven", "doen", "handelen", "onderhandelen"]},
     "aperire" : {"type" : "werkwoord", "add":null, "translate":["openen", "bekendmaken"]},
