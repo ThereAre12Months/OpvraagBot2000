@@ -98,8 +98,8 @@ def overview(vc):
         out += str(key)
         out += "\033[0m" + Fore.LIGHTYELLOW_EX
         out += f": {word['type']}"
-        if word["add"] != None: out += Fore.GREEN + f": +{word['add']}"
-        new = "\033[95m"
+        if word["add"] != None: out += Fore.LIGHTGREEN_EX + f": +{word['add']}"
+        new = Fore.LIGHTMAGENTA_EX
         for count, translates in enumerate(word["translate"]):
             if not count == 0: new += ", "
             if type(translates) == str:
@@ -114,7 +114,7 @@ def vraagOp(vc, naamvl, times, vraagWoordsoorten):
     correctCounter = 0
     for i in range(times):
         woordje = random.choice(list(vc.keys()))
-        sys.stdout.write("\033[1;3m" + "\033[94m" + woordje + "\033[0m\n")
+        sys.stdout.write("\033[1;3m" + Fore.BLUE + woordje + "\033[0m\n")
         if vraagWoordsoorten:
             if stage("Welke woordsoort?", WOORDSOORTEN) == vc[woordje]["type"]:
                 print("Correct!")
@@ -141,7 +141,7 @@ def toetsModus(vc, naamvl):
     while len(juisteWoordjes) < len(list(vc.keys())):
         fouteWoordjes = list(set(juisteWoordjes).symmetric_difference(list(vc.keys())))
         foutWoordje = random.choice(fouteWoordjes)
-        sys.stdout.write("\033[1;3m" + "\033[94m" + foutWoordje + "\033[0m\n")
+        sys.stdout.write("\033[1;3m" + Fore.BLUE + foutWoordje + "\033[0m\n")
         trashcan = vertalingOpvragen(foutWoordje, vc[foutWoordje]["translate"])
         if trashcan == True:
             juisteWoordjes.append(foutWoordje)
