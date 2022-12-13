@@ -1,5 +1,6 @@
 import json, os, random, sys, colorama
 colorama.init()
+from colorama import Fore
 
 # constants
 WOORDSOORTEN = ["substantief", "adjectief", "voorzetsel", "voegwoord", "werkwoord", "bijwoord", "aanwijzend voornaamwoord", "persoonlijk voornaamwoord", "bezittelijk voornaamwoord", "vraagpartikel", "vraagwoord", "wederkerend voornaamwoord"]
@@ -92,12 +93,12 @@ def vertalingOpvragen(origWoordje, vertalingen):
 # gives a neat overview of all the vocabulary
 def overview(vc):
     for key in vc.keys():
-        out = "\033[1;3m" + "\033[94m"
+        out = "\033[1;3m" + Fore.BLUE
         word = vc[key]
         out += str(key)
-        out += "\033[0m" + "\033[93m"
+        out += "\033[0m" + Fore.LIGHTYELLOW_EX
         out += f": {word['type']}"
-        if word["add"] != None: out += "\033[92m" f": +{word['add']}"
+        if word["add"] != None: out += Fore.GREEN + f": +{word['add']}"
         new = "\033[95m"
         for count, translates in enumerate(word["translate"]):
             if not count == 0: new += ", "
